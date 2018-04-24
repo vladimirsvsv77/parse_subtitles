@@ -3,7 +3,7 @@ import nltk.data
 import os
 
 
-dir_path = '/Users/vladimie/PycharmProjects/series/'
+dir_path = 'your_path'
 qa_file = open('qa_series.txt', 'w')
 
 
@@ -47,10 +47,8 @@ for root, dirs, files in os.walk(dir_path):
     for file in files:
         if file.endswith(".srt"):
             file_parh = os.path.join(root, file)
-            # try:
             get_qa_from_file(file_parh)
-            # except:
-            #     print(file_parh)
+
 
 
 
