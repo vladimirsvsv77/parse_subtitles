@@ -36,9 +36,10 @@ def get_qa_from_file(file_parh):
     for j in range(len(sentence)):
         if check_sentense(sentence[j]):
             try:
-                if sentence[j + 1][len(sentence[j + 1]) - 1] != '?':
-                    qa_file.write(handle_sent(sentence[j]))
-                    qa_file.write(handle_sent(sentence[j + 1]))
+                if '\n' in sentence[j] + sentence[j + 1]:
+                    if sentence[j + 1][len(sentence[j + 1]) - 1] != '?':
+                        qa_file.write(handle_sent(sentence[j]))
+                        qa_file.write(handle_sent(sentence[j + 1]))
             except IndexError:
                 continue
 
